@@ -21,6 +21,7 @@ import { CommunicationFormComponent } from './communication-form/communication-f
   imports: [
     BrowserModule,
     AppRoutingModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
