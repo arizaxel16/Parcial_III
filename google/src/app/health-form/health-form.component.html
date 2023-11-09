@@ -1,0 +1,141 @@
+<div class="health-container">
+    <form id="health-form" *ngIf="healthForm" [formGroup]="healthForm">
+        <!-- Blood Type Input -->
+        <div class="form-data-container">
+            <span>
+                <h2>Grupo Sanguíneo</h2>
+                <h2 class="asterisk">*</h2>
+            </span>
+            <select id="blood_type-input" formControlName="blood">
+                <option value="" disabled selected>Seleccione</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+            <div *ngIf="healthForm.get('blood')!.invalid && healthForm.get('blood')!.touched" class="error-message">
+                El campo es obligatorio ! Seleccione una opción...
+            </div>
+        </div>
+
+        <!-- Alergies Input -->
+        <div class="form-data-container">
+            <h2>Alergias</h2>
+            <div class="textInputWrapper">
+                <input class="textInput" type="text" formControlName="alergies" id="alergies_input">
+            </div>
+        </div>
+        <div *ngIf="healthForm.get('alergies')!.invalid && healthForm.get('alergies')!.touched" class="error-message">
+            (max 150 char).
+        </div>
+
+        <!-- Medicine Input -->
+        <div class="form-data-container">
+            <h2>Medicamentos en uso</h2>
+            <div class="textInputWrapper">
+                <input class="textInput" type="text" formControlName="medicine" id="medicine_input">
+            </div>
+        </div>
+        <div *ngIf="healthForm.get('medicine')!.invalid && healthForm.get('medicine')!.touched" class="error-message">
+            (max 150 char).
+        </div>
+
+        <!-- Chronic Illness Input -->
+        <div class="form-data-container">
+            <h2>Enfermedades crónicas</h2>
+            <div class="textInputWrapper">
+                <input class="textInput" type="text" formControlName="illness" id="illness_input">
+            </div>
+        </div>
+        <div *ngIf="healthForm.get('illness')!.invalid && healthForm.get('illness')!.touched" class="error-message">
+            (max 150 char).
+        </div>
+
+        <!-- Eating Habits Input -->
+        <div class="form-data-container">
+            <h2>Hábitos alimenticios</h2>
+            <div class="textInputWrapper">
+                <input class="textInput" type="text" formControlName="food" id="food_input">
+            </div>
+        </div>
+        <div *ngIf="healthForm.get('food')!.invalid && healthForm.get('food')!.touched" class="error-message">
+            (max 150 char).
+        </div>
+
+        <!-- Exercise Habits Input -->
+        <div class="form-data-container">
+            <h2>Hábitos de ejercicio</h2>
+            <div class="textInputWrapper">
+                <input class="textInput" type="text" formControlName="exercise" id="exercise_input">
+            </div>
+        </div>
+        <div *ngIf="healthForm.get('exercise')!.invalid && healthForm.get('exercise')!.touched" class="error-message">
+            (max 150 char).
+        </div>
+
+        <!-- Smoker Input -->
+        <div class="form-data-container">
+            <span>
+                <h2>¿ Es usted fumador(a) ?</h2>
+                <h2 class="asterisk">*</h2>
+            </span>
+            <select id="smoker-input" formControlName="smoker">
+                <option value="" disabled selected>Seleccione</option>
+                <option value="Si">Si</option>
+                <option value="No">No</option>
+
+            </select>
+            <div *ngIf="healthForm.get('smoker')!.invalid && healthForm.get('smoker')!.touched" class="error-message">
+                El campo es obligatorio ! Seleccione una opción...
+            </div>
+        </div>
+
+        <!-- Alcohol Input -->
+        <div class="form-data-container">
+            <span>
+                <h2>Consumo de alcohol</h2>
+                <h2 class="asterisk">*</h2>
+            </span>
+            <select id="alcohol-input" formControlName="alcohol">
+                <option value="" disabled selected>Seleccione</option>
+                <option value="Nunca">Nunca</option>
+                <option value="En celebraciones especiales">En celebraciones especiales</option>
+                <option value="1 vez al mes">1 vez al mes</option>
+                <option value="2 veces al mes">2 veces al mes</option>
+                <option value="1 por semana">1 por semana</option>
+                <option value="3 por semana">3 por semana</option>
+                <option value="Todos los dias">Todos los dias</option>
+            </select>
+            <div *ngIf="healthForm.get('alcohol')!.invalid && healthForm.get('alcohol')!.touched" class="error-message">
+                El campo es obligatorio ! Seleccione una opción...
+            </div>
+        </div>
+
+        <!-- Surgery Input -->
+        <div class="form-data-container">
+            <h2>Historial de cirugías</h2>
+            <div class="textInputWrapper">
+                <input class="textInput" type="text" formControlName="surgery" id="surgery_input">
+            </div>
+        </div>
+        <div *ngIf="healthForm.get('surgery')!.invalid && healthForm.get('surgery')!.touched" class="error-message">
+            (max 150 char).
+        </div>
+
+        <!-- Emergency Contact Input -->
+        <div class="form-data-container">
+            <h2>Contactos de emergencia</h2>
+            <h2 class="asterisk">*</h2>
+            <div class="textInputWrapper">
+                <input class="textInput" type="text" formControlName="contact" id="contact_input">
+            </div>
+            <div *ngIf="healthForm.get('contact')!.invalid && healthForm.get('contact')!.touched" class="error-message">
+                El campo es obligatorio ! (max 150 char).
+            </div>
+        </div>
+    </form>
+</div>
