@@ -1,11 +1,11 @@
-<div class="personal-container">
+<div id="personal-container" class="primary-form-container">
   <form id="personal-form" *ngIf="personalForm" [formGroup]="personalForm">
-    <h3>Informacion personal:</h3>
+    <h3>Informacion personal</h3>
 
     <!-- Name -->
     <div class="form-data-container">
       <span>
-        <h4>Nombre</h4>
+        <h2>Nombre</h2>
         <h2 class="asterisk">*</h2>
       </span>
       <input
@@ -21,7 +21,7 @@
 
     <!-- Second Name -->
     <div class="form-data-container">
-      <h4>Segundo nombre</h4>
+      <h2>Segundo nombre</h2>
       <input
         class="textInput"
         type="text"
@@ -36,7 +36,7 @@
     <!-- Surname -->
     <div class="form-data-container">
       <span>
-        <h4>Apellidos:</h4>
+        <h2>Apellidos:</h2>
         <h2 class="asterisk">*</h2>
       </span>
       <input
@@ -53,7 +53,7 @@
     <!-- Birth Date -->
     <div class="form-data-container">
       <span>
-        <h4>Fecha de nacimiento</h4>
+        <h2>Fecha de nacimiento</h2>
         <h2 class="asterisk">*</h2>
       </span>
       <input
@@ -70,7 +70,7 @@
     <!-- Gender -->
     <div class="form-data-container">
       <span>
-        <h4>Genero:</h4>
+        <h2>Genero:</h2>
         <h2 class="asterisk">*</h2>
       </span>
       <select id="gender-input" formControlName="gender">
@@ -87,7 +87,7 @@
     <!-- Phone -->
     <div class="form-data-container">
       <span>
-        <h4>Número de teléfono</h4>
+        <h2>Número de teléfono</h2>
         <h2 class="asterisk">*</h2>
       </span>
       <input
@@ -105,7 +105,7 @@
     <!-- Department -->
     <div class="form-data-container">
       <span>
-        <h4>Departamento de residencia</h4>
+        <h2>Departamento de residencia</h2>
         <h2 class="asterisk">*</h2>
       </span>
       <input
@@ -122,7 +122,7 @@
     <!-- City -->
     <div class="form-data-container">
       <span>
-        <h4>Ciudad de residencia</h4>
+        <h2>Ciudad de residencia</h2>
         <h2 class="asterisk">*</h2>
       </span>
       <input
@@ -139,7 +139,7 @@
     <!-- Adress -->
     <div class="form-data-container">
       <span>
-        <h4>Direccion de residencia</h4>
+        <h2>Direccion de residencia</h2>
         <h2 class="asterisk">*</h2>
       </span>
       <input
@@ -155,7 +155,7 @@
 
     <!-- E-mail -->
     <div class="form-data-container">
-      <h4>Correo electronico:</h4>
+      <h2>Correo electronico:</h2>
       <input
         class="textInput"
         type="email"
@@ -171,7 +171,7 @@
     <!-- Nationality -->
     <div class="form-data-container">
       <span>
-        <h4>Nacionalidad</h4>
+        <h2>Nacionalidad</h2>
         <h2 class="asterisk">*</h2>
       </span>
       <select id="country-input" formControlName="country">

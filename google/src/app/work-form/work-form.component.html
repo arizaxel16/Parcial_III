@@ -1,6 +1,6 @@
-<div class="work-container">
+<div id="work-container" class="primary-form-container">
   <form id="work-form" *ngIf="workForm" [formGroup]="workForm">
-    <h3>Historia laboral:</h3>
+    <h3>Historia laboral</h3>
 
     <!-- Enterprise Name -->
     <div class="form-data-container">
@@ -9,7 +9,7 @@
         <input class="textInput" type="text" formControlName="enterprise" id="enterprise_input">
       </div>
     </div>
-    <div *ngIf="healthForm.get('enterprise')!.invalid && healthForm.get('enterprise')!.touched" class="error-message">
+    <div *ngIf="workForm.get('enterprise')!.invalid && workForm.get('enterprise')!.touched" class="error-message">
       (max 50 char).
     </div>
 
@@ -20,53 +20,55 @@
         <input class="textInput" type="text" formControlName="position" id="position_input">
       </div>
     </div>
-    <div *ngIf="healthForm.get('position')!.invalid && healthForm.get('position')!.touched" class="error-message">
+    <div *ngIf="workForm.get('position')!.invalid && workForm.get('position')!.touched" class="error-message">
       (max 100 char).
     </div>
+
     <!-- Start Date -->
     <div class="form-data-container">
       <span>
-        <h4>Fecha de inicio</h4>
+        <h2>Fecha de inicio</h2>
         <h2 class="asterisk">*</h2>
       </span>
       <input type="date" formControlName="startdate" id="startdate_input" />
       <!-- [min]="minDateStart" [max]="maxDateStart" -->
     </div>
-    <div *ngIf="personalForm.get('startdate')!.invalid && personalForm.get('startdate')!.touched" class="error-message">
+    <div *ngIf="workForm.get('startdate')!.invalid && workForm.get('startdate')!.touched" class="error-message">
       Campo obligatorio
     </div>
+    
     <!-- End Date -->
     <div class="form-data-container">
       <span>
-        <h4>Fecha de inicio</h4>
+        <h2>Fecha de inicio</h2>
         <h2 class="asterisk">*</h2>
       </span>
       <input type="date" formControlName="enddate" id="enddate_input" />
       <!-- [min]="minDateend" [max]="maxDateend" -->
     </div>
-    <div *ngIf="personalForm.get('enddate')!.invalid && personalForm.get('enddate')!.touched" class="error-message">
+    <div *ngIf="workForm.get('enddate')!.invalid && workForm.get('enddate')!.touched" class="error-message">
       Campo obligatorio
     </div>
 
     <!-- Responsabilities -->
     <div class="form-data-container">
       <span>
-        <h4>Responsabilidades</h4>
+        <h2>Responsabilidades</h2>
         <h2 class="asterisk">*</h2>
       </span>
       <input class="textInput" type="text" formControlName="responsabilities" id="responsabilities_input" />
     </div>
-    <div *ngIf="personalForm.get('responsabilities')!.invalid && personalForm.get('responsabilities')!.touched"
+    <div *ngIf="workForm.get('responsabilities')!.invalid && workForm.get('responsabilities')!.touched"
       class="error-message">
       Campo obligatorio, No se pueden utilizar simbolos! (max 200 char).
     </div>
 
     <!-- Achievements -->
     <div class="form-data-container">
-      <h4>Logros destacables</h4>
+      <h2>Logros destacables</h2>
       <input class="textInput" type="text" formControlName="achievements" id="achievements_input" />
     </div>
-    <div *ngIf="personalForm.get('achievements')!.invalid && personalForm.get('achievements')!.touched"
+    <div *ngIf="workForm.get('achievements')!.invalid && workForm.get('achievements')!.touched"
       class="error-message">
       (max 100 char)
     </div>
@@ -74,7 +76,7 @@
     <!-- Nationality -->
     <div class="form-data-container">
       <span>
-        <h4>Pais de desarrollo</h4>
+        <h2>Pais de desarrollo</h2>
         <h2 class="asterisk">*</h2>
       </span>
       <select id="country-input" formControlName="country">
@@ -314,7 +316,7 @@
         <option value="ZW">Zimbabue</option>
       </select>
     </div>
-    <div *ngIf="personalForm.get('country')!.invalid && personalForm.get('country')!.touched" class="error-message">
+    <div *ngIf="workForm.get('country')!.invalid && workForm.get('country')!.touched" class="error-message">
       El campo es obligatorio ! Seleccione una opción...
     </div>
 

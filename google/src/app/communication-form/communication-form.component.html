@@ -1,6 +1,6 @@
-<div class="communication-container">
+<div id="communication-container" class="primary-form-container">
   <form id="communication-form" *ngIf="communicationForm" [formGroup]="communicationForm">
-    <h3>Metodos de comunicacion:</h3>
+    <h3>Metodos de comunicación</h3>
 
     <!-- Prefered Comms -->
     <div class="form-data-container">
@@ -105,7 +105,7 @@
     <!-- Terms and Conditions -->
     <div class="form-data-container">
       <span>
-        <h4>Aceptacion de terminos y condiciones</h4>
+        <h2>Aceptacion de terminos y condiciones</h2>
         <h2 class="asterisk">*</h2>
       </span>
       <input type="radio" id="terms-input" formControlName="terms" />
