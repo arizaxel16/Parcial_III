@@ -4,7 +4,7 @@
 
     <!-- Enterprise Name -->
     <div class="form-data-container">
-      <h2>Nombre de la empresa</h2>
+      <h4>Nombre de la empresa</h4>
       <div class="textInputWrapper">
         <input class="textInput" type="text" formControlName="enterprise" id="enterprise_input">
       </div>
@@ -15,7 +15,7 @@
 
     <!-- Position Input -->
     <div class="form-data-container">
-      <h2>Cargo</h2>
+      <h4>Cargo</h4>
       <div class="textInputWrapper">
         <input class="textInput" type="text" formControlName="position" id="position_input">
       </div>
@@ -27,8 +27,8 @@
     <!-- Start Date -->
     <div class="form-data-container">
       <span>
-        <h2>Fecha de inicio</h2>
-        <h2 class="asterisk">*</h2>
+        <h4>Fecha de inicio</h4>
+        <h4 class="asterisk">*</h4>
       </span>
       <input type="date" formControlName="startdate" id="startdate_input" />
       <!-- [min]="minDateStart" [max]="maxDateStart" -->
@@ -40,8 +40,8 @@
     <!-- End Date -->
     <div class="form-data-container">
       <span>
-        <h2>Fecha de inicio</h2>
-        <h2 class="asterisk">*</h2>
+        <h4>Fecha de inicio</h4>
+        <h4 class="asterisk">*</h4>
       </span>
       <input type="date" formControlName="enddate" id="enddate_input" />
       <!-- [min]="minDateend" [max]="maxDateend" -->
@@ -53,8 +53,8 @@
     <!-- Responsabilities -->
     <div class="form-data-container">
       <span>
-        <h2>Responsabilidades</h2>
-        <h2 class="asterisk">*</h2>
+        <h4>Responsabilidades</h4>
+        <h4 class="asterisk">*</h4>
       </span>
       <input class="textInput" type="text" formControlName="responsabilities" id="responsabilities_input" />
     </div>
@@ -65,7 +65,7 @@
 
     <!-- Achievements -->
     <div class="form-data-container">
-      <h2>Logros destacables</h2>
+      <h4>Logros destacables</h4>
       <input class="textInput" type="text" formControlName="achievements" id="achievements_input" />
     </div>
     <div *ngIf="workForm.get('achievements')!.invalid && workForm.get('achievements')!.touched"
@@ -76,8 +76,8 @@
     <!-- Nationality -->
     <div class="form-data-container">
       <span>
-        <h2>Pais de desarrollo</h2>
-        <h2 class="asterisk">*</h2>
+        <h4>Pais de desarrollo</h4>
+        <h4 class="asterisk">*</h4>
       </span>
       <select id="country-input" formControlName="country">
         <option value="AF">Afganistán</option>
@@ -322,7 +322,7 @@
 
     <!-- Supervisor Input -->
     <div class="form-data-container">
-      <h2>Supervisor</h2>
+      <h4>Supervisor</h4>
       <div class="textInputWrapper">
         <input class="textInput" type="text" formControlName="supervisor" id="supervisor_input"
           [placeholder]="supervisor_placeholder">
@@ -334,7 +334,7 @@
 
     <!-- Exit Input -->
     <div class="form-data-container">
-      <h2>Motivo de salida</h2>
+      <h4>Motivo de salida</h4>
       <div class="textInputWrapper">
         <input class="textInput" type="text" formControlName="exit" id="exit_input">
       </div>
