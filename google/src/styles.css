@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -9,13 +11,17 @@ body {
     padding: 0px;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     margin: 0px;
 }
 
 h1 {
     font-size: 5rem;
     font-weight: 300;
+    font-family: 'Poppins', sans-serif;
 }
 
 h2 {

@@ -8,12 +8,7 @@
         <h4>Nombre</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <input
-        class="textInput"
-        type="text"
-        formControlName="name"
-        id="name_input"
-      />
+      <input class="textInput" type="text" formControlName="name" id="name_input"/>
     </div>
     <div *ngIf="personalForm.get('name')!.invalid && personalForm.get('name')!.touched" class="error-message">
         Campo obligatorio, No se pueden utilizar simbolos! (max 50 char).
