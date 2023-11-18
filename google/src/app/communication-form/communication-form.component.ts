@@ -9,6 +9,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CommunicationFormComponent {
   // class vars
   communicationForm: FormGroup;
+  isChecked_terms: boolean = false;
+  isChecked_info: boolean = false;
+  isChecked_data: boolean = false;
 
   // constructor de formulario
   constructor(private fb: FormBuilder) {
@@ -16,9 +19,9 @@ export class CommunicationFormComponent {
       comms: [{ value: 'Select', disabled: false }, Validators.required],
       contact: [{ value: 'Select', disabled: false }, Validators.required],
       language: [{ value: 'Select', disabled: false }, Validators.required],
-      time: ['', [Validators.maxLength(50)]],
+      time: ['', [Validators.maxLength(50), Validators.required]],
       notif: [{ value: 'Select', disabled: false }, Validators.required],
-      terms: [{ value: 'Select', disabled: false }, Validators.required],
+      terms: [Validators.required],
       info: [{ value: 'Select', disabled: false }, Validators.required],
       comment: ['', [Validators.maxLength(200)]],
       data: [{ value: 'Select', disabled: false }, Validators.required]

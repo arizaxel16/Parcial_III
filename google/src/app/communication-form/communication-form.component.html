@@ -1,21 +1,28 @@
 <div id="communication-container" class="primary-form-container">
-  <form id="communication-form" *ngIf="communicationForm" [formGroup]="communicationForm">
+  <form
+    id="communication-form"
+    *ngIf="communicationForm"
+    [formGroup]="communicationForm"
+  >
     <h3>Metodos de comunicación</h3>
 
     <!-- Prefered Comms -->
     <div class="form-data-container">
       <span>
-        <h4>Métodos de comunicación preferidos</h4>
+        <h4>Método de comunicación preferido</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <select id="pref_comms-input" formControlName="comms">
+      <select id="comms_input" formControlName="comms">
         <option value="" disabled selected>Seleccione</option>
         <option value="correo">Correo</option>
         <option value="teléfono">Teléfono</option>
         <option value="otro">Otro</option>
       </select>
       <div
-        *ngIf="communicationForm.get('comms')!.invalid && communicationForm.get('comms')!.touched"
+        *ngIf="
+          communicationForm.get('comms')!.invalid &&
+          communicationForm.get('comms')!.touched
+        "
         class="error-message"
       >
         El campo es obligatorio ! Seleccione una opción...
@@ -28,14 +35,18 @@
         <h4>Frecuencia de contacto</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <select id="contact-input" formControlName="contact">
+      <select id="contact_input" formControlName="contact">
+        <option value="" disabled selected>Seleccione</option>
         <option value="nula">Nula</option>
         <option value="casi nula">Casi nula</option>
         <option value="frecuente">Frecuente</option>
         <option value="constante">Constante</option>
       </select>
       <div
-        *ngIf="communicationForm.get('contact')!.invalid && communicationForm.get('contact')!.touched"
+        *ngIf="
+          communicationForm.get('contact')!.invalid &&
+          communicationForm.get('contact')!.touched
+        "
         class="error-message"
       >
         El campo es obligatorio ! Seleccione una opción...
@@ -48,7 +59,8 @@
         <h4>Idiomas</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <select id="language-input" formControlName="language">
+      <select id="language_input" formControlName="language">
+        <option value="" disabled selected>Seleccione</option>
         <option value="Español">Español</option>
         <option value="Inglés">Inglés</option>
         <option value="Francés">Francés</option>
@@ -58,7 +70,10 @@
         <option value="Otro">Otro</option>
       </select>
       <div
-        *ngIf="communicationForm.get('language')!.invalid && communicationForm.get('language')!.touched"
+        *ngIf="
+          communicationForm.get('language')!.invalid &&
+          communicationForm.get('language')!.touched
+        "
         class="error-message"
       >
         El campo es obligatorio ! Seleccione una opción...
@@ -67,21 +82,22 @@
 
     <!-- Contact Availability -->
     <div class="form-data-container">
-      <h4>Horario de contacto</h4>
+      <span>
+        <h4>Horario de contacto</h4>
+        <h4 class="asterisk">*</h4>
+      </span>
       <div class="textInputWrapper">
-        <input
-          class="textInput"
-          type="text"
-          formControlName="time"
-          id="time_input"
-        />
+        <input id="time_input" class="textInput" type="text" formControlName="time" />
       </div>
     </div>
     <div
-      *ngIf="communicationForm.get('time')!.invalid && communicationForm.get('time')!.touched"
+      *ngIf="
+        communicationForm.get('time')!.invalid &&
+        communicationForm.get('time')!.touched
+      "
       class="error-message"
     >
-      (max 50 char).
+      El campo es obligatorio ! (max 50 char).
     </div>
 
     <!-- Notification Preference -->
@@ -90,48 +106,16 @@
         <h4>Preferencia de notificaciones</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <select id="notif-input" formControlName="notif">
+      <select id="notif_input" formControlName="notif">
+        <option value="" disabled selected>Seleccione</option>
         <option value="habilitado">Habilitado</option>
         <option value="deshabilitado">Deshabilitado</option>
       </select>
       <div
-        *ngIf="communicationForm.get('notif')!.invalid && communicationForm.get('notif')!.touched"
-        class="error-message"
-      >
-        El campo es obligatorio ! Seleccione una opción...
-      </div>
-    </div>
-
-    <!-- Terms and Conditions -->
-    <div class="form-data-container">
-      <span>
-        <h4>Aceptacion de terminos y condiciones</h4>
-        <h4 class="asterisk">*</h4>
-      </span>
-      <input type="radio" id="terms-input" formControlName="terms" />
-      <label>Acepto</label>
-      <input type="radio" id="terms-input" formControlName="terms" />
-      <label>No acepto</label>
-      <div
-        *ngIf="communicationForm.get('terms')!.invalid && communicationForm.get('terms')!.touched"
-        class="error-message"
-      >
-        El campo es obligatorio ! Seleccione una opción...
-      </div>
-    </div>
-
-    <!-- Receive Info -->
-    <div class="form-data-container">
-      <span>
-        <h4>Autorizacion para recibir informacion</h4>
-        <h4 class="asterisk">*</h4>
-      </span>
-      <input type="radio" id="info-input" formControlName="info" />
-      <label>Autorizo</label>
-      <input type="radio" id="info-input" formControlName="info" />
-      <label>No autorizo</label>
-      <div
-        *ngIf="communicationForm.get('info')!.invalid && communicationForm.get('info')!.touched"
+        *ngIf="
+          communicationForm.get('notif')!.invalid &&
+          communicationForm.get('notif')!.touched
+        "
         class="error-message"
       >
         El campo es obligatorio ! Seleccione una opción...
@@ -142,33 +126,88 @@
     <div class="form-data-container">
       <h4>Comentarios</h4>
       <div class="textInputWrapper">
-        <input
-          class="textInput"
-          type="text"
-          formControlName="comment"
-          id="comment_input"
-        />
+        <input id="comment_input" class="textInput" type="text" formControlName="comment" />
       </div>
     </div>
     <div
-      *ngIf="communicationForm.get('comment')!.invalid && communicationForm.get('comment')!.touched"
+      *ngIf="
+        communicationForm.get('comment')!.invalid &&
+        communicationForm.get('comment')!.touched
+      "
       class="error-message"
     >
       (max 200 char).
     </div>
 
+    <!-- Terms and Conditions -->
+    <div class="form-data-container">
+      <span>
+        <h4>Términos y condiciones</h4>
+        <h4 class="asterisk">*</h4>
+      </span>
+      <label>
+        Acepto
+        <input
+          id="terms_input"
+          type="checkbox"
+          formControlName="terms"
+          [(ngModel)]="isChecked_terms"
+        />
+      </label>
+      <div
+        *ngIf="
+          communicationForm.get('terms')!.invalid &&
+          communicationForm.get('terms')!.touched
+        "
+        class="error-message"
+      >
+        El campo es obligatorio ! Seleccione una opción...
+      </div>
+    </div>
+
     <!-- Data Storage -->
     <div class="form-data-container">
       <span>
-        <h4>Consentimineto tratamiento de datos</h4>
+        <h4>Consentimiento tratamiento de datos</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <input type="radio" id="data-input" formControlName="data" />
-      <label>Autorizo</label>
-      <input type="radio" id="data-input" formControlName="data" />
-      <label>No autorizo</label>
+      <label>
+        Acepto
+        <input
+          id="data_input"
+          type="checkbox"
+          formControlName="data"
+          [(ngModel)]="isChecked_data"
+        />
+      </label>
       <div
-        *ngIf="communicationForm.get('data')!.invalid && communicationForm.get('data')!.touched"
+        *ngIf="
+          communicationForm.get('data')!.invalid &&
+          communicationForm.get('data')!.touched
+        "
+        class="error-message"
+      >
+        El campo es obligatorio ! Seleccione una opción...
+      </div>
+    </div>
+    
+    <!-- Receive Info -->
+    <div class="form-data-container">
+      <h4>Autorización para recibir información</h4>
+      <label>
+        Acepto
+        <input
+          id="info_input"
+          type="checkbox"
+          formControlName="info"
+          [(ngModel)]="isChecked_info"
+        />
+      </label>
+      <div
+        *ngIf="
+          communicationForm.get('info')!.invalid &&
+          communicationForm.get('info')!.touched
+        "
         class="error-message"
       >
         El campo es obligatorio ! Seleccione una opción...
