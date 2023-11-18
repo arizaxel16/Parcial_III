@@ -9,10 +9,13 @@
         <h4 class="asterisk">*</h4>
       </span>
       <select id="level-input" formControlName="level">
-        <option value="nula">Primaria</option>
-        <option value="casi nula">Secundaria</option>
-        <option value="frecuente">Bachillerato</option>
-        <option value="constante">Superior</option>
+        <option value="" disabled selected>Seleccione</option>
+        <option value="primaria">Primaria</option>
+        <option value="secundaria">Secundaria</option>
+        <option value="bachillerato">Bachillerato</option>
+        <option value="uni">Universitario</option>
+        <option value="masters">Masters</option>
+        <option value="phd">PhD</option>
       </select>
       <div
         *ngIf="

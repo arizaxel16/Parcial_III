@@ -24,7 +24,7 @@ export class CommunicationFormComponent {
       terms: [Validators.required],
       info: [{ value: 'Select', disabled: false }, Validators.required],
       comment: ['', [Validators.maxLength(200)]],
-      data: [{ value: 'Select', disabled: false }, Validators.required]
+      data: [{ value: 'Select', disabled: false }]
     });
   }
 
