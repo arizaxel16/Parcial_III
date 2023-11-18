@@ -4,7 +4,10 @@
 
     <!-- Enterprise Name -->
     <div class="form-data-container">
-      <h4>Nombre de la empresa</h4>
+      <span>
+        <h4>Nombre de la empresa</h4>
+        <h4 class="asterisk">*</h4>
+      </span>
       <div class="textInputWrapper">
         <input class="textInput" type="text" formControlName="enterprise" id="enterprise_input">
       </div>
@@ -15,7 +18,10 @@
 
     <!-- Position Input -->
     <div class="form-data-container">
-      <h4>Cargo</h4>
+      <span>
+        <h4>Cargo</h4>
+        <h4 class="asterisk">*</h4>
+      </span>
       <div class="textInputWrapper">
         <input class="textInput" type="text" formControlName="position" id="position_input">
       </div>
@@ -80,6 +86,7 @@
         <h4 class="asterisk">*</h4>
       </span>
       <select id="country-input" formControlName="country">
+        <option value="" disabled selected>Seleccione</option>
         <option value="AF">Afganistán</option>
         <option value="AL">Albania</option>
         <option value="DE">Alemania</option>
@@ -322,7 +329,10 @@
 
     <!-- Supervisor Input -->
     <div class="form-data-container">
-      <h4>Supervisor</h4>
+      <span>
+        <h4>Supervisor</h4>
+        <h4 class="asterisk">*</h4>
+      </span>
       <div class="textInputWrapper">
         <input class="textInput" type="text" formControlName="supervisor" id="supervisor_input"
           [placeholder]="supervisor_placeholder">
@@ -334,7 +344,10 @@
 
     <!-- Exit Input -->
     <div class="form-data-container">
-      <h4>Motivo de salida</h4>
+      <span>
+        <h4>Motivo de salida</h4>
+        <h4 class="asterisk">*</h4>
+      </span>
       <div class="textInputWrapper">
         <input class="textInput" type="text" formControlName="exit" id="exit_input">
       </div>
