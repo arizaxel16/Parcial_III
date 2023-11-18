@@ -39,14 +39,8 @@ export class PersonalFormComponent {
       birthdate: ['', Validators.required],
       gender: [{ value: 'Select', disabled: false }, Validators.required],
       tel: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
-      department: [
-        '',
-        [
-          Validators.required,
-          Validators.maxLength(30),
-          Validators.pattern(/^[a-zA-Z]+$/),
-        ],
-      ],
+      country: [{ value: 'Select', disabled: false }, Validators.required],
+      country_residence: [{ value: 'Select', disabled: false }, Validators.required],
       city: [
         '',
         [
@@ -62,8 +56,7 @@ export class PersonalFormComponent {
           Validators.maxLength(100)
         ],
       ],
-      email: ['', Validators.email],
-      country: [{ value: 'Select', disabled: false }, Validators.required]
+      email: ['', [Validators.email, Validators.required]],
     });
   }
 
