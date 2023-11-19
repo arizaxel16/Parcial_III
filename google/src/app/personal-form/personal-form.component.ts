@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { GlobalService } from '../global.service';
 
 @Component({
   selector: 'app-personal-form',
@@ -8,13 +9,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class PersonalFormComponent {
   // constantes visual
+  readonly nameInput_placeholder: String = 'John';
+  readonly surnameInput_placeholder: String = 'Doe';
   readonly telInput_placeholder: String = '123-4567890';
   readonly emailInput_placeholder: String = 'example@email.com';
 
   personalForm: FormGroup;
 
   // constructor formulario con validaciones individuales
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private globalService: GlobalService) {
     this.personalForm = this.fb.group({
       name: [
         '',
@@ -61,7 +64,7 @@ export class PersonalFormComponent {
   }
 
   // funcion general de comprobacion de formulario
-  isFormValid(): boolean {
-    return this.personalForm.valid;
+  onFormChange(): void {
+    this.globalService.setIsValidForm(0, this.personalForm.valid);
   }
 }

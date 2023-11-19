@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { GlobalService } from '../global.service';
 
 @Component({
   selector: 'app-communication-form',
@@ -14,22 +15,22 @@ export class CommunicationFormComponent {
   isChecked_data: boolean = false;
 
   // constructor de formulario
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private globalService: GlobalService) {
     this.communicationForm = this.fb.group({
       comms: [{ value: 'Select', disabled: false }, Validators.required],
       contact: [{ value: 'Select', disabled: false }, Validators.required],
       language: [{ value: 'Select', disabled: false }, Validators.required],
       time: ['', [Validators.maxLength(150), Validators.required]],
       notif: [{ value: 'Select', disabled: false }, Validators.required],
-      terms: [Validators.required],
-      info: [{ value: 'Select', disabled: false }, Validators.required],
+      terms: [false, [Validators.pattern('true')]],
+      info: [{ value: 'Select', disabled: false }],
       comment: ['', [Validators.maxLength(400)]],
-      data: [{ value: 'Select', disabled: false }]
+      data: [false, [Validators.pattern('true')]]
     });
   }
 
   // funcion general de comprobacion de formulario
-  isFormValid(): boolean {
-    return this.communicationForm.valid;
+  onFormChange(): void {
+    this.globalService.setIsValidForm(4, this.communicationForm.valid);
   }
 }

@@ -14,6 +14,7 @@
         type="text"
         formControlName="enterprise"
         id="enterprise_input"
+        (ngModelChange)="onFormChange()"
       />
     </div>
     <div
@@ -37,6 +38,7 @@
         type="text"
         formControlName="position"
         id="position_input"
+        (ngModelChange)="onFormChange()"
       />
     </div>
     <div
@@ -54,7 +56,7 @@
         <h4>Fecha de inicio</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <input type="date" formControlName="startdate" id="startdate_input" />
+      <input type="date" formControlName="startdate" id="startdate_input" (ngModelChange)="onFormChange()"/>
       <!-- [min]="minDateStart" [max]="maxDateStart" -->
     </div>
     <div
@@ -72,7 +74,7 @@
         <h4>Fecha de finalización</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <input type="date" formControlName="enddate" id="enddate_input" />
+      <input type="date" formControlName="enddate" id="enddate_input" (ngModelChange)="onFormChange()"/>
       <!-- [min]="minDateend" [max]="maxDateend" -->
     </div>
     <div
@@ -95,6 +97,7 @@
         type="text"
         formControlName="responsabilities"
         id="responsabilities_input"
+        (ngModelChange)="onFormChange()"
       ></textarea>
     </div>
     <div
@@ -115,6 +118,7 @@
         type="text"
         formControlName="achievements"
         id="achievements_input"
+        (ngModelChange)="onFormChange()"
       ></textarea>
     </div>
     <div
@@ -133,7 +137,7 @@
         <h4>Pais de desarrollo</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <select id="country-input" formControlName="country">
+      <select id="country-input" formControlName="country" (ngModelChange)="onFormChange()">
         <option value="" disabled selected>Seleccione</option>
         <option value="AF">Afganistán</option>
         <option value="AL">Albania</option>
@@ -392,6 +396,7 @@
         formControlName="supervisor"
         id="supervisor_input"
         [placeholder]="supervisor_placeholder"
+        (ngModelChange)="onFormChange()"
       />
     </div>
     <div
@@ -415,6 +420,7 @@
         type="text"
         formControlName="exit"
         id="exit_input"
+        (ngModelChange)="onFormChange()"
       ></textarea>
     </div>
     <div

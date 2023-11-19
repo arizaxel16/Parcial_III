@@ -12,7 +12,7 @@
         <h4>Método de comunicación preferido</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <select id="comms_input" formControlName="comms">
+      <select id="comms_input" formControlName="comms" (ngModelChange)="onFormChange()">
         <option value="" disabled selected>Seleccione</option>
         <option value="correo">Correo</option>
         <option value="teléfono">Teléfono</option>
@@ -35,7 +35,7 @@
         <h4>Frecuencia de contacto</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <select id="contact_input" formControlName="contact">
+      <select id="contact_input" formControlName="contact" (ngModelChange)="onFormChange()">
         <option value="" disabled selected>Seleccione</option>
         <option value="nula">Nula</option>
         <option value="casi nula">Casi nula</option>
@@ -56,10 +56,10 @@
     <!-- Language -->
     <div class="form-data-container">
       <span>
-        <h4>Idiomas</h4>
+        <h4>Idioma Nativo</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <select id="language_input" formControlName="language">
+      <select id="language_input" formControlName="language" (ngModelChange)="onFormChange()">
         <option value="" disabled selected>Seleccione</option>
         <option value="Español">Español</option>
         <option value="Inglés">Inglés</option>
@@ -91,6 +91,7 @@
         id="time_input"
         type="text"
         formControlName="time"
+        (ngModelChange)="onFormChange()"
       ></textarea>
     </div>
     <div
@@ -109,7 +110,7 @@
         <h4>Preferencia de notificaciones</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <select id="notif_input" formControlName="notif">
+      <select id="notif_input" formControlName="notif" (ngModelChange)="onFormChange()">
         <option value="" disabled selected>Seleccione</option>
         <option value="habilitado">Habilitado</option>
         <option value="deshabilitado">Deshabilitado</option>
@@ -133,6 +134,7 @@
         id="comment_input"
         type="text"
         formControlName="comment"
+        (ngModelChange)="onFormChange()"
       ></textarea>
     </div>
     <div
@@ -158,17 +160,9 @@
           type="checkbox"
           formControlName="terms"
           [(ngModel)]="isChecked_terms"
+          (ngModelChange)="onFormChange()"
         />
       </label>
-      <div
-        *ngIf="
-          communicationForm.get('terms')!.invalid &&
-          communicationForm.get('terms')!.touched
-        "
-        class="error-message"
-      >
-        El campo es obligatorio ! Seleccione una opción...
-      </div>
     </div>
 
     <!-- Data Storage -->
@@ -184,17 +178,9 @@
           type="checkbox"
           formControlName="data"
           [(ngModel)]="isChecked_data"
+          (ngModelChange)="onFormChange()"
         />
       </label>
-      <div
-        *ngIf="
-          communicationForm.get('data')!.invalid &&
-          communicationForm.get('data')!.touched
-        "
-        class="error-message"
-      >
-        El campo es obligatorio ! Seleccione una opción...
-      </div>
     </div>
 
     <!-- Receive Info -->
@@ -207,17 +193,9 @@
           type="checkbox"
           formControlName="info"
           [(ngModel)]="isChecked_info"
+          (ngModelChange)="onFormChange()"
         />
       </label>
-      <div
-        *ngIf="
-          communicationForm.get('info')!.invalid &&
-          communicationForm.get('info')!.touched
-        "
-        class="error-message"
-      >
-        El campo es obligatorio ! Seleccione una opción...
-      </div>
     </div>
   </form>
 </div>

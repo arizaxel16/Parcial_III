@@ -6,7 +6,7 @@
     <div class="form-data-container">
       <span>
         <h4>Nombre</h4>
-        <h4 class="asterisk">*</h4>
+        <h4 class="asterisk">*</h4> 
       </span>
 
       <input
@@ -14,6 +14,8 @@
         type="text"
         formControlName="name"
         id="name_input"
+        [placeholder]="nameInput_placeholder"
+        (ngModelChange)="onFormChange()"
       />
     </div>
     <div
@@ -34,6 +36,7 @@
         type="text"
         formControlName="secondName"
         id="secondName_input"
+        (ngModelChange)="onFormChange()"
       />
     </div>
     <div
@@ -58,6 +61,8 @@
         type="text"
         formControlName="surname"
         id="surname_input"
+        [placeholder]="surnameInput_placeholder"
+        (ngModelChange)="onFormChange()"
       />
     </div>
     <div
@@ -76,7 +81,7 @@
         <h4>Fecha de nacimiento</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <input type="date" formControlName="birthdate" id="birthdate_input" />
+      <input type="date" formControlName="birthdate" id="birthdate_input" (ngModelChange)="onFormChange()"/>
       <!-- [min]="minDate" [max]="maxDate" -->
     </div>
     <div
@@ -95,7 +100,7 @@
         <h4>Genero</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <select id="gender-input" formControlName="gender">
+      <select id="gender-input" formControlName="gender" (ngModelChange)="onFormChange()">
         <option value="" disabled selected>Seleccione</option>
         <option value="masculino">Masculino</option>
         <option value="femenino">Femenino</option>
@@ -125,6 +130,7 @@
         formControlName="tel"
         id="tel_input"
         [placeholder]="telInput_placeholder"
+        (ngModelChange)="onFormChange()"
       />
     </div>
     <div
@@ -149,6 +155,7 @@
         formControlName="email"
         id="email_input"
         [placeholder]="emailInput_placeholder"
+        (ngModelChange)="onFormChange()"
       />
     </div>
     <div
@@ -166,7 +173,7 @@
         <h4>Nacionalidad</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <select id="country-input" formControlName="country">
+      <select id="country-input" formControlName="country" (ngModelChange)="onFormChange()">
         <option value="" disabled selected>Seleccione</option>
         <option value="AF">Afganistán</option>
         <option value="AL">Albania</option>
@@ -420,7 +427,7 @@
         <h4>País de residencia</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <select id="country_residence-input" formControlName="country_residence">
+      <select id="country_residence-input" formControlName="country_residence" (ngModelChange)="onFormChange()">
         <option value="" disabled selected>Seleccione</option>
         <option value="AF">Afganistán</option>
         <option value="AL">Albania</option>
@@ -680,6 +687,7 @@
         type="text"
         formControlName="city"
         id="city_input"
+        (ngModelChange)="onFormChange()"
       />
     </div>
     <div
@@ -703,6 +711,7 @@
         type="text"
         formControlName="adress"
         id="adress_input"
+        (ngModelChange)="onFormChange()"
       />
     </div>
     <div

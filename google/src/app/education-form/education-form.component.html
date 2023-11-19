@@ -8,7 +8,7 @@
         <h4>Nivel educativo</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <select id="level-input" formControlName="level">
+      <select id="level-input" formControlName="level" (ngModelChange)="onFormChange()">
         <option value="" disabled selected>Seleccione</option>
         <option value="primaria">Primaria</option>
         <option value="secundaria">Secundaria</option>
@@ -39,6 +39,7 @@
         type="text"
         formControlName="institution"
         id="institution_input"
+        (ngModelChange)="onFormChange()"
       />
     </div>
     <div
@@ -62,6 +63,7 @@
         type="text"
         formControlName="title"
         id="title_input"
+        (ngModelChange)="onFormChange()"
       />
     </div>
     <div
@@ -80,7 +82,7 @@
         <h4>Fecha de finalización</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <input type="date" formControlName="enddate" id="enddate_input" />
+      <input type="date" formControlName="enddate" id="enddate_input" (ngModelChange)="onFormChange()"/>
       <!-- [min]="minDate" [max]="maxDate" -->
     </div>
     <div
@@ -104,6 +106,7 @@
         type="text"
         formControlName="area"
         id="area_input"
+        (ngModelChange)="onFormChange()"
       />
     </div>
     <div
@@ -121,7 +124,7 @@
         <h4>País donde se realizaron estudios</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <select id="country-input" formControlName="country">
+      <select id="country-input" formControlName="country" (ngModelChange)="onFormChange()">
         <option value="AF">Afganistán</option>
         <option value="AL">Albania</option>
         <option value="DE">Alemania</option>
@@ -370,6 +373,7 @@
         type="text"
         formControlName="city"
         id="city_input"
+        (ngModelChange)="onFormChange()"
       />
     </div>
     <div
@@ -392,6 +396,7 @@
         type="text"
         formControlName="comment"
         id="comment_input"
+        (ngModelChange)="onFormChange()"
       />
     </div>
     <div
@@ -401,13 +406,13 @@
       "
       class="error-message"
     >
-      Campo obligatorio, No se pueden utilizar simbolos! (max 200 char).
+      (max 400 char).
     </div>
 
     <!-- Certifications -->
     <div class="form-data-container">
       <h4>Certificaciones</h4>
-      <input type="file" formControlName="file" id="file_input" />
+      <input type="file" formControlName="file" id="file_input" (ngModelChange)="onFormChange()"/>
     </div>
     <div
       *ngIf="

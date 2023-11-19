@@ -126,7 +126,7 @@ select {
   appearance: none;
   padding: 5px 10px;
   border: 2px solid #ccc;
-  background-color: #f0f0f0;
+  background: linear-gradient(to right, #f0f0f0 90%, #a1a1a1 10%);
   border-radius: 4px;
   cursor: pointer;
 }

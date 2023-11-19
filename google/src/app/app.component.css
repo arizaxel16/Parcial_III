@@ -25,7 +25,8 @@
 }
 
 button {
-    width: 130px;
+  width: 130px;
+  background-color: #ededed;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   letter-spacing: 2px;
@@ -44,8 +45,20 @@ button {
   transition: all 0.3s;
 }
 
+button:disabled {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #a1a1a1;
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #a1a1a1;
+  cursor: not-allowed;
+  scale: 1;
+}
+
 button:hover {
-  background-color: #ededed;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 

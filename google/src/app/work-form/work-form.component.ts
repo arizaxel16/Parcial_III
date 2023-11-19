@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { GlobalService } from '../global.service';
 
 @Component({
   selector: 'app-work-form',
@@ -13,7 +14,7 @@ export class WorkFormComponent {
   workForm: FormGroup;
 
   // constructor de formulario
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private globalService: GlobalService) {
     this.workForm = this.fb.group({
       enterprise: ['', [Validators.maxLength(50), Validators.required]],
       position: ['', [Validators.maxLength(100), Validators.required]],
@@ -28,7 +29,7 @@ export class WorkFormComponent {
   }
 
   // funcion general de comprobacion de formulario
-  isFormValid(): boolean {
-    return this.workForm.valid;
+  onFormChange(): void {
+    this.globalService.setIsValidForm(3, this.workForm.valid);
   }
 }

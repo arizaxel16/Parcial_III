@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { GlobalService } from '../global.service';
 
 @Component({
   selector: 'app-health-form',
@@ -12,7 +13,7 @@ export class HealthFormComponent {
   healthForm: FormGroup;
 
   // constructor de formulario
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private globalService: GlobalService) {
     this.healthForm = this.fb.group({
       blood: [{ value: 'Select', disabled: false }, Validators.required],
       alergies: ['', [Validators.maxLength(400)]],
@@ -28,7 +29,7 @@ export class HealthFormComponent {
   }
 
   // funcion general de comprobacion de formulario
-  isFormValid(): boolean {
-    return this.healthForm.valid;
+  onFormChange(): void {
+    this.globalService.setIsValidForm(1, this.healthForm.valid);
   }
 }

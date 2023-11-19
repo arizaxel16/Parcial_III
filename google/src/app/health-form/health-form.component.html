@@ -7,7 +7,7 @@
         <h4>Grupo Sanguíneo</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <select id="blood_type-input" formControlName="blood">
+      <select id="blood_type-input" formControlName="blood" (ngModelChange)="onFormChange()">
         <option value="" disabled selected>Seleccione</option>
         <option value="A+">A+</option>
         <option value="A-">A-</option>
@@ -36,6 +36,7 @@
         type="text"
         formControlName="alergies"
         id="alergies_input"
+        (ngModelChange)="onFormChange()"
       ></textarea>
     </div>
     <div
@@ -56,6 +57,7 @@
         type="text"
         formControlName="medicine"
         id="medicine_input"
+        (ngModelChange)="onFormChange()"
       ></textarea>
     </div>
     <div
@@ -76,6 +78,7 @@
         type="text"
         formControlName="illness"
         id="illness_input"
+        (ngModelChange)="onFormChange()"
       ></textarea>
     </div>
     <div
@@ -95,6 +98,7 @@
         type="text"
         formControlName="food"
         id="food_input"
+        (ngModelChange)="onFormChange()"
       ></textarea>
     </div>
     <div
@@ -112,6 +116,7 @@
         type="text"
         formControlName="exercise"
         id="exercise_input"
+        (ngModelChange)="onFormChange()"
       ></textarea>
     </div>
     <div
@@ -130,7 +135,7 @@
         <h4>¿ Es usted fumador(a) ?</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <select id="smoker-input" formControlName="smoker">
+      <select id="smoker-input" formControlName="smoker" (ngModelChange)="onFormChange()">
         <option value="" disabled selected>Seleccione</option>
         <option value="Si">Si</option>
         <option value="No">No</option>
@@ -151,7 +156,7 @@
         <h4>Consumo de alcohol</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <select id="alcohol-input" formControlName="alcohol">
+      <select id="alcohol-input" formControlName="alcohol" (ngModelChange)="onFormChange()">
         <option value="" disabled selected>Seleccione</option>
         <option value="Nunca">Nunca</option>
         <option value="En celebraciones especiales">
@@ -182,6 +187,7 @@
         type="text"
         formControlName="surgery"
         id="surgery_input"
+        (ngModelChange)="onFormChange()"
       ></textarea>
     </div>
     <div
@@ -204,6 +210,7 @@
         type="text"
         formControlName="contact"
         id="contact_input"
+        (ngModelChange)="onFormChange()"
       />
       <div
         *ngIf="
