@@ -19,11 +19,11 @@ export class WorkFormComponent {
       position: ['', [Validators.maxLength(100), Validators.required]],
       startdate: ['', Validators.required],
       enddate: ['', Validators.required],
-      responsabilities: ['', [Validators.required, Validators.maxLength(200)]],
-      achievements: ['', [Validators.maxLength(100)]],
+      responsabilities: ['', [Validators.required, Validators.maxLength(400)]],
+      achievements: ['', [Validators.maxLength(200)]],
       country: [{ value: 'Select', disabled: false }, Validators.required],
       supervisor: ['', [Validators.required, Validators.maxLength(50), Validators.pattern(/^[a-zA-Z]+$/)]],
-      exit: ['', [Validators.required, Validators.maxLength(150), Validators.pattern(/^[a-zA-Z]+$/)]],
+      exit: ['', [Validators.required, Validators.maxLength(300), Validators.pattern(/^[a-zA-Z]+$/)]],
     });
   }
 

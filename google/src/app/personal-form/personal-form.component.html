@@ -8,15 +8,27 @@
         <h4>Nombre</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <input class="textInput" type="text" formControlName="name" id="name_input"/>
+
+      <input
+        class="textInput"
+        type="text"
+        formControlName="name"
+        id="name_input"
+      />
     </div>
-    <div *ngIf="personalForm.get('name')!.invalid && personalForm.get('name')!.touched" class="error-message">
-        Campo obligatorio, No se pueden utilizar simbolos! (max 50 char).
+    <div
+      *ngIf="
+        personalForm.get('name')!.invalid && personalForm.get('name')!.touched
+      "
+      class="error-message"
+    >
+      Campo obligatorio, No se pueden utilizar simbolos! (max 50 char).
     </div>
 
     <!-- Second Name -->
     <div class="form-data-container">
       <h4>Segundo nombre</h4>
+
       <input
         class="textInput"
         type="text"
@@ -24,8 +36,14 @@
         id="secondName_input"
       />
     </div>
-    <div *ngIf="personalForm.get('secondName')!.invalid && personalForm.get('secondName')!.touched" class="error-message">
-        No se pueden utilizar simbolos! (max 50 char).
+    <div
+      *ngIf="
+        personalForm.get('secondName')!.invalid &&
+        personalForm.get('secondName')!.touched
+      "
+      class="error-message"
+    >
+      No se pueden utilizar simbolos! (max 50 char).
     </div>
 
     <!-- Surname -->
@@ -34,6 +52,7 @@
         <h4>Apellidos</h4>
         <h4 class="asterisk">*</h4>
       </span>
+
       <input
         class="textInput"
         type="text"
@@ -41,8 +60,14 @@
         id="surname_input"
       />
     </div>
-    <div *ngIf="personalForm.get('surname')!.invalid && personalForm.get('surname')!.touched" class="error-message">
-        Campo obligatorio, No se pueden utilizar simbolos! (max 50 char).
+    <div
+      *ngIf="
+        personalForm.get('surname')!.invalid &&
+        personalForm.get('surname')!.touched
+      "
+      class="error-message"
+    >
+      Campo obligatorio, No se pueden utilizar simbolos! (max 50 char).
     </div>
 
     <!-- Birth Date -->
@@ -51,15 +76,17 @@
         <h4>Fecha de nacimiento</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <input
-        type="date"
-        formControlName="birthdate"
-        id="birthdate_input"
-      />
+      <input type="date" formControlName="birthdate" id="birthdate_input" />
       <!-- [min]="minDate" [max]="maxDate" -->
     </div>
-    <div *ngIf="personalForm.get('birthdate')!.invalid && personalForm.get('birthdate')!.touched" class="error-message">
-        Campo obligatorio
+    <div
+      *ngIf="
+        personalForm.get('birthdate')!.invalid &&
+        personalForm.get('birthdate')!.touched
+      "
+      class="error-message"
+    >
+      Campo obligatorio
     </div>
 
     <!-- Gender -->
@@ -75,8 +102,14 @@
         <option value="otro">Otro</option>
       </select>
     </div>
-    <div *ngIf="personalForm.get('gender')!.invalid && personalForm.get('gender')!.touched" class="error-message">
-        El campo es obligatorio ! Seleccione una opción...
+    <div
+      *ngIf="
+        personalForm.get('gender')!.invalid &&
+        personalForm.get('gender')!.touched
+      "
+      class="error-message"
+    >
+      El campo es obligatorio ! Seleccione una opción...
     </div>
 
     <!-- Phone -->
@@ -85,6 +118,7 @@
         <h4>Número de teléfono</h4>
         <h4 class="asterisk">*</h4>
       </span>
+
       <input
         class="textInput"
         type="text"
@@ -93,8 +127,13 @@
         [placeholder]="telInput_placeholder"
       />
     </div>
-    <div *ngIf="personalForm.get('tel')!.invalid && personalForm.get('tel')!.touched" class="error-message">
-        Campo obligatorio, solo se permiten números! (10 digitos).
+    <div
+      *ngIf="
+        personalForm.get('tel')!.invalid && personalForm.get('tel')!.touched
+      "
+      class="error-message"
+    >
+      Campo obligatorio, solo se permiten números! (10 digitos).
     </div>
 
     <!-- E-mail -->
@@ -103,6 +142,7 @@
         <h4>Correo electronico</h4>
         <h4 class="asterisk">*</h4>
       </span>
+
       <input
         class="textInput"
         type="email"
@@ -111,8 +151,13 @@
         [placeholder]="emailInput_placeholder"
       />
     </div>
-    <div *ngIf="personalForm.get('email')!.invalid && personalForm.get('email')!.touched" class="error-message">
-        Campo obligatorio, revise dirrección de correo electrónico.
+    <div
+      *ngIf="
+        personalForm.get('email')!.invalid && personalForm.get('email')!.touched
+      "
+      class="error-message"
+    >
+      Campo obligatorio, revise dirrección de correo electrónico.
     </div>
 
     <!-- Nationality -->
@@ -359,8 +404,14 @@
         <option value="ZW">Zimbabue</option>
       </select>
     </div>
-    <div *ngIf="personalForm.get('country')!.invalid && personalForm.get('country')!.touched" class="error-message">
-        El campo es obligatorio ! Seleccione una opción...
+    <div
+      *ngIf="
+        personalForm.get('country')!.invalid &&
+        personalForm.get('country')!.touched
+      "
+      class="error-message"
+    >
+      El campo es obligatorio ! Seleccione una opción...
     </div>
 
     <!-- Country Residence -->
@@ -607,8 +658,14 @@
         <option value="ZW">Zimbabue</option>
       </select>
     </div>
-    <div *ngIf="personalForm.get('country_residence')!.invalid && personalForm.get('country_residence')!.touched" class="error-message">
-        El campo es obligatorio ! Seleccione una opción...
+    <div
+      *ngIf="
+        personalForm.get('country_residence')!.invalid &&
+        personalForm.get('country_residence')!.touched
+      "
+      class="error-message"
+    >
+      El campo es obligatorio ! Seleccione una opción...
     </div>
 
     <!-- City -->
@@ -617,6 +674,7 @@
         <h4>Ciudad de residencia</h4>
         <h4 class="asterisk">*</h4>
       </span>
+
       <input
         class="textInput"
         type="text"
@@ -624,8 +682,13 @@
         id="city_input"
       />
     </div>
-    <div *ngIf="personalForm.get('city')!.invalid && personalForm.get('city')!.touched" class="error-message">
-        Campo obligatorio, No se pueden utilizar simbolos! (max 30 char).
+    <div
+      *ngIf="
+        personalForm.get('city')!.invalid && personalForm.get('city')!.touched
+      "
+      class="error-message"
+    >
+      Campo obligatorio, No se pueden utilizar simbolos! (max 30 char).
     </div>
 
     <!-- Adress -->
@@ -634,6 +697,7 @@
         <h4>Dirección de residencia</h4>
         <h4 class="asterisk">*</h4>
       </span>
+
       <input
         class="textInput"
         type="text"
@@ -641,8 +705,14 @@
         id="adress_input"
       />
     </div>
-    <div *ngIf="personalForm.get('adress')!.invalid && personalForm.get('adress')!.touched" class="error-message">
-        Campo obligatorio (max 100 char).
+    <div
+      *ngIf="
+        personalForm.get('adress')!.invalid &&
+        personalForm.get('adress')!.touched
+      "
+      class="error-message"
+    >
+      Campo obligatorio (max 100 char).
     </div>
   </form>
 </div>

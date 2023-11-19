@@ -15,14 +15,14 @@ export class HealthFormComponent {
   constructor(private fb: FormBuilder) {
     this.healthForm = this.fb.group({
       blood: [{ value: 'Select', disabled: false }, Validators.required],
-      alergies: ['', [Validators.maxLength(150)]],
-      medicine: ['', [Validators.maxLength(150)]],
-      illness: ['', [Validators.maxLength(150)]],
-      food: ['', [Validators.maxLength(150)]],
-      exercise: ['', [Validators.maxLength(150)]],
+      alergies: ['', [Validators.maxLength(400)]],
+      medicine: ['', [Validators.maxLength(400)]],
+      illness: ['', [Validators.maxLength(400)]],
+      food: ['', [Validators.maxLength(400)]],
+      exercise: ['', [Validators.maxLength(400)]],
       smoker: [{ value: 'Select', disabled: false }, Validators.required],
       alcohol: [{ value: 'Select', disabled: false }, Validators.required],
-      surgery: ['', [Validators.maxLength(150)]],
+      surgery: ['', [Validators.maxLength(400)]],
       contact: ['', [Validators.required, Validators.maxLength(150)]]
     });
   }

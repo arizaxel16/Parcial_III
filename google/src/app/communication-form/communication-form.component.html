@@ -86,9 +86,12 @@
         <h4>Horario de contacto</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <div class="textInputWrapper">
-        <input id="time_input" class="textInput" type="text" formControlName="time" />
-      </div>
+      <textarea
+        class="longTextInput"
+        id="time_input"
+        type="text"
+        formControlName="time"
+      ></textarea>
     </div>
     <div
       *ngIf="
@@ -97,7 +100,7 @@
       "
       class="error-message"
     >
-      El campo es obligatorio ! (max 50 char).
+      El campo es obligatorio ! (max 150 char).
     </div>
 
     <!-- Notification Preference -->
@@ -125,9 +128,12 @@
     <!-- Comments -->
     <div class="form-data-container">
       <h4>Comentarios</h4>
-      <div class="textInputWrapper">
-        <input id="comment_input" class="textInput" type="text" formControlName="comment" />
-      </div>
+      <textarea
+        class="longTextInput"
+        id="comment_input"
+        type="text"
+        formControlName="comment"
+      ></textarea>
     </div>
     <div
       *ngIf="
@@ -136,7 +142,7 @@
       "
       class="error-message"
     >
-      (max 200 char).
+      (max 400 char).
     </div>
 
     <!-- Terms and Conditions -->
@@ -190,7 +196,7 @@
         El campo es obligatorio ! Seleccione una opción...
       </div>
     </div>
-    
+
     <!-- Receive Info -->
     <div class="form-data-container">
       <h4>Autorización para recibir información</h4>

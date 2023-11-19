@@ -19,11 +19,11 @@ export class CommunicationFormComponent {
       comms: [{ value: 'Select', disabled: false }, Validators.required],
       contact: [{ value: 'Select', disabled: false }, Validators.required],
       language: [{ value: 'Select', disabled: false }, Validators.required],
-      time: ['', [Validators.maxLength(50), Validators.required]],
+      time: ['', [Validators.maxLength(150), Validators.required]],
       notif: [{ value: 'Select', disabled: false }, Validators.required],
       terms: [Validators.required],
       info: [{ value: 'Select', disabled: false }, Validators.required],
-      comment: ['', [Validators.maxLength(200)]],
+      comment: ['', [Validators.maxLength(400)]],
       data: [{ value: 'Select', disabled: false }]
     });
   }

@@ -8,11 +8,21 @@
         <h4>Nombre de la empresa</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <div class="textInputWrapper">
-        <input class="textInput" type="text" formControlName="enterprise" id="enterprise_input">
-      </div>
+
+      <input
+        class="textInput"
+        type="text"
+        formControlName="enterprise"
+        id="enterprise_input"
+      />
     </div>
-    <div *ngIf="workForm.get('enterprise')!.invalid && workForm.get('enterprise')!.touched" class="error-message">
+    <div
+      *ngIf="
+        workForm.get('enterprise')!.invalid &&
+        workForm.get('enterprise')!.touched
+      "
+      class="error-message"
+    >
       (max 50 char).
     </div>
 
@@ -22,11 +32,19 @@
         <h4>Cargo</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <div class="textInputWrapper">
-        <input class="textInput" type="text" formControlName="position" id="position_input">
-      </div>
+      <input
+        class="textInput"
+        type="text"
+        formControlName="position"
+        id="position_input"
+      />
     </div>
-    <div *ngIf="workForm.get('position')!.invalid && workForm.get('position')!.touched" class="error-message">
+    <div
+      *ngIf="
+        workForm.get('position')!.invalid && workForm.get('position')!.touched
+      "
+      class="error-message"
+    >
       (max 100 char).
     </div>
 
@@ -39,20 +57,30 @@
       <input type="date" formControlName="startdate" id="startdate_input" />
       <!-- [min]="minDateStart" [max]="maxDateStart" -->
     </div>
-    <div *ngIf="workForm.get('startdate')!.invalid && workForm.get('startdate')!.touched" class="error-message">
+    <div
+      *ngIf="
+        workForm.get('startdate')!.invalid && workForm.get('startdate')!.touched
+      "
+      class="error-message"
+    >
       Campo obligatorio
     </div>
-    
+
     <!-- End Date -->
     <div class="form-data-container">
       <span>
-        <h4>Fecha de inicio</h4>
+        <h4>Fecha de finalización</h4>
         <h4 class="asterisk">*</h4>
       </span>
       <input type="date" formControlName="enddate" id="enddate_input" />
       <!-- [min]="minDateend" [max]="maxDateend" -->
     </div>
-    <div *ngIf="workForm.get('enddate')!.invalid && workForm.get('enddate')!.touched" class="error-message">
+    <div
+      *ngIf="
+        workForm.get('enddate')!.invalid && workForm.get('enddate')!.touched
+      "
+      class="error-message"
+    >
       Campo obligatorio
     </div>
 
@@ -62,21 +90,41 @@
         <h4>Responsabilidades</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <input class="textInput" type="text" formControlName="responsabilities" id="responsabilities_input" />
+      <textarea
+        class="longTextInput"
+        type="text"
+        formControlName="responsabilities"
+        id="responsabilities_input"
+      ></textarea>
     </div>
-    <div *ngIf="workForm.get('responsabilities')!.invalid && workForm.get('responsabilities')!.touched"
-      class="error-message">
-      Campo obligatorio, No se pueden utilizar simbolos! (max 200 char).
+    <div
+      *ngIf="
+        workForm.get('responsabilities')!.invalid &&
+        workForm.get('responsabilities')!.touched
+      "
+      class="error-message"
+    >
+      Campo obligatorio, No se pueden utilizar simbolos! (max 400 char).
     </div>
 
     <!-- Achievements -->
     <div class="form-data-container">
       <h4>Logros destacables</h4>
-      <input class="textInput" type="text" formControlName="achievements" id="achievements_input" />
+      <textarea
+        class="longTextInput"
+        type="text"
+        formControlName="achievements"
+        id="achievements_input"
+      ></textarea>
     </div>
-    <div *ngIf="workForm.get('achievements')!.invalid && workForm.get('achievements')!.touched"
-      class="error-message">
-      (max 100 char)
+    <div
+      *ngIf="
+        workForm.get('achievements')!.invalid &&
+        workForm.get('achievements')!.touched
+      "
+      class="error-message"
+    >
+      (max 200 char)
     </div>
 
     <!-- Nationality -->
@@ -323,7 +371,12 @@
         <option value="ZW">Zimbabue</option>
       </select>
     </div>
-    <div *ngIf="workForm.get('country')!.invalid && workForm.get('country')!.touched" class="error-message">
+    <div
+      *ngIf="
+        workForm.get('country')!.invalid && workForm.get('country')!.touched
+      "
+      class="error-message"
+    >
       El campo es obligatorio ! Seleccione una opción...
     </div>
 
@@ -333,12 +386,21 @@
         <h4>Supervisor</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <div class="textInputWrapper">
-        <input class="textInput" type="text" formControlName="supervisor" id="supervisor_input"
-          [placeholder]="supervisor_placeholder">
-      </div>
+      <input
+        class="textInput"
+        type="text"
+        formControlName="supervisor"
+        id="supervisor_input"
+        [placeholder]="supervisor_placeholder"
+      />
     </div>
-    <div *ngIf="workForm.get('supervisor')!.invalid && workForm.get('supervisor')!.touched" class="error-message">
+    <div
+      *ngIf="
+        workForm.get('supervisor')!.invalid &&
+        workForm.get('supervisor')!.touched
+      "
+      class="error-message"
+    >
       Campo obligatorio, No se pueden utilizar simbolos! (max 50 char)
     </div>
 
@@ -348,12 +410,18 @@
         <h4>Motivo de salida</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <div class="textInputWrapper">
-        <input class="textInput" type="text" formControlName="exit" id="exit_input">
-      </div>
+      <textarea
+        class="longTextInput"
+        type="text"
+        formControlName="exit"
+        id="exit_input"
+      ></textarea>
     </div>
-    <div *ngIf="workForm.get('exit')!.invalid && workForm.get('exit')!.touched" class="error-message">
-      Campo obligatorio, No se pueden utilizar simbolos! (max 150 char)
+    <div
+      *ngIf="workForm.get('exit')!.invalid && workForm.get('exit')!.touched"
+      class="error-message"
+    >
+      Campo obligatorio, No se pueden utilizar simbolos! (max 300 char)
     </div>
   </form>
 </div>
