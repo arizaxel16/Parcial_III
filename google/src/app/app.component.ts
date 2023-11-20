@@ -6,6 +6,7 @@ import { HealthFormComponent } from './health-form/health-form.component';
 import { PersonalFormComponent } from './personal-form/personal-form.component';
 import { WorkFormComponent } from './work-form/work-form.component';
 import { GlobalService } from './global.service';
+import { Ticket } from './ticket/ticket.model';
 
 @Component({
   selector: 'app-root',
@@ -57,6 +58,7 @@ export class AppComponent {
 
     if (formGroupValid === true) {
       this.activeClass = "ticket-overlay"
+      const ticket: Ticket = {};
     }
   }
 
