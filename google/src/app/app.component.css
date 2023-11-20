@@ -21,7 +21,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 15px 0px;
+  margin: 15px 0px 50px 0px;
 }
 
 button {
@@ -65,17 +65,6 @@ button:hover {
 button:active {
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
   scale: 1.05;
-}
-
-#submit {
-    margin-bottom: 50px;
-}
-
-.submit-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 600px;
 }
 
 h1 {

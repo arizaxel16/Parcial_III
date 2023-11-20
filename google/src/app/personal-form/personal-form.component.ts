@@ -17,7 +17,10 @@ export class PersonalFormComponent {
   personalForm: FormGroup;
 
   // constructor formulario con validaciones individuales
-  constructor(private fb: FormBuilder, private globalService: GlobalService) {
+  constructor(
+      private fb: FormBuilder,
+      private globalService: GlobalService
+    ) {
     this.personalForm = this.fb.group({
       name: [
         '',

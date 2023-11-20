@@ -23,7 +23,10 @@ export class AppComponent {
   currentFormIndex = 0;
   routes: string[] = ["personal", "health", "education", "work", "communication"];
 
-  constructor(private router: Router, private globalService: GlobalService) {}
+  constructor(
+    private router: Router, 
+    private globalService: GlobalService
+    ) {}
 
   onPrevious() {
     if (this.formValidation()) {
@@ -45,5 +48,18 @@ export class AppComponent {
 
   formValidation(): boolean {
     return this.globalService.getIsValidForm(this.currentFormIndex);
+  }
+
+  onSubmit() {
+    let formGroupValid: boolean = true;
+    for (let index = 0; index < 5; index++) {
+      if (this.globalService.getIsValidForm(index) === false) {
+        formGroupValid = false;
+      }
+    }
+
+    if (formGroupValid === true) {
+      alert("VALID");
+    }
   }
 }

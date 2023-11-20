@@ -8,22 +8,12 @@
         <h1 style="color: #ea4335;">e</h1>
     </div>
     <h2>Formulario de aplicación nuevos integrantes</h2>
-    
-    <!-- <app-personal-form />
-    <app-health-form />
-    <app-education-form />
-    <app-work-form />
-    <app-communication-form /> -->
 
     <router-outlet></router-outlet>
 
     <div class="nav-buttons">
         <button [disabled]="currentFormIndex === 0" (click)="onPrevious()">Anterior</button>
-        <button [disabled]="currentFormIndex === 4" (click)="onNext()">Siguiente</button>
-    </div>
-
-    <!-- (click)="onSubmit()" -->
-    <div class="submit-container">
-        <button id="submit" type="submit">Enviar !</button>
+        <button (click)="onNext()" [hidden]="currentFormIndex === 4">Siguiente</button>
+        <button id="submit" type="submit" (click)="onSubmit()" [hidden]="currentFormIndex != 4">Enviar !</button>
     </div>
 </div>
