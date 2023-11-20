@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GlobalService } from '../global.service';
 
@@ -7,7 +7,7 @@ import { GlobalService } from '../global.service';
   templateUrl: './education-form.component.html',
   styleUrls: ['./education-form.component.css']
 })
-export class EducationFormComponent {
+export class EducationFormComponent implements OnInit {
 
   educationForm: FormGroup;
 
@@ -24,6 +24,18 @@ export class EducationFormComponent {
       comment: ['', [Validators.maxLength(400)]],
       file: ['', [Validators.required]]
     });
+
+    this.educationForm.valueChanges.subscribe(() => {
+      this.globalService.setEducationFormData(this.educationForm.value);
+    });
+  }
+
+  ngOnInit() {
+    // Set initial form data if available
+    const storedData = this.globalService.getEducationFormData();
+    if (storedData) {
+      this.educationForm.patchValue(storedData);
+    }
   }
 
   // funcion general de comprobacion de formulario

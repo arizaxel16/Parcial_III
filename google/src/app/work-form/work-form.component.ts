@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GlobalService } from '../global.service';
 
@@ -7,7 +7,7 @@ import { GlobalService } from '../global.service';
   templateUrl: './work-form.component.html',
   styleUrls: ['./work-form.component.css']
 })
-export class WorkFormComponent {
+export class WorkFormComponent implements OnInit {
   
   // class vars
   readonly supervisor_placeholder: String = "Nombre de supervisor";
@@ -26,6 +26,18 @@ export class WorkFormComponent {
       supervisor: ['', [Validators.required, Validators.maxLength(50), Validators.pattern(/^[a-zA-Z]+$/)]],
       exit: ['', [Validators.required, Validators.maxLength(300), Validators.pattern(/^[a-zA-Z]+$/)]],
     });
+
+    this.workForm.valueChanges.subscribe(() => {
+      this.globalService.setWorkFormData(this.workForm.value);
+    });
+  }
+
+  ngOnInit() {
+    // Set initial form data if available
+    const storedData = this.globalService.getWorkFormData();
+    if (storedData) {
+      this.workForm.patchValue(storedData);
+    }
   }
 
   // funcion general de comprobacion de formulario

@@ -20,4 +20,54 @@ export class GlobalService {
   setIsValidForm(index: number, value: boolean): void {
     this.isValidList[index] = value;
   }
+
+  private personalFormData: any = {};
+
+  getPersonalFormData() {
+    return this.personalFormData;
+  }
+
+  setPersonalFormData(formData: any) {
+    this.personalFormData = formData;
+  }
+
+  private communicationFormData: any = {};
+
+  getCommunicationFormData() {
+    return this.communicationFormData;
+  }
+
+  setCommunicationFormData(formData: any) {
+    this.communicationFormData = formData;
+  }
+
+  private educationFormData: any = {};
+
+  getEducationFormData() {
+    return this.educationFormData;
+  }
+
+  setEducationFormData(formData: any) {
+    this.educationFormData = formData;
+  }
+
+  private healthFormData: any = {};
+
+  getHealthFormData() {
+    return this.healthFormData;
+  }
+
+  setHealthFormData(formData: any) {
+    this.healthFormData = formData;
+  }
+
+  private workFormData: any = {};
+
+  getWorkFormData() {
+    return this.workFormData;
+  }
+
+  setWorkFormData(formData: any) {
+    this.workFormData = formData;
+  }
 }

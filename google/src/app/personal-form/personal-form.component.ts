@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GlobalService } from '../global.service';
 
@@ -7,7 +7,7 @@ import { GlobalService } from '../global.service';
   templateUrl: './personal-form.component.html',
   styleUrls: ['./personal-form.component.css'],
 })
-export class PersonalFormComponent {
+export class PersonalFormComponent implements OnInit {
   // constantes visual
   readonly nameInput_placeholder: String = 'John';
   readonly surnameInput_placeholder: String = 'Doe';
@@ -64,6 +64,18 @@ export class PersonalFormComponent {
       ],
       email: ['', [Validators.email, Validators.required]],
     });
+
+    this.personalForm.valueChanges.subscribe(() => {
+      this.globalService.setPersonalFormData(this.personalForm.value);
+    });
+  }
+
+  ngOnInit() {
+    // Set initial form data if available
+    const storedData = this.globalService.getPersonalFormData();
+    if (storedData) {
+      this.personalForm.patchValue(storedData);
+    }
   }
 
   // funcion general de comprobacion de formulario

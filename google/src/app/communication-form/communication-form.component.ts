@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GlobalService } from '../global.service';
 
@@ -7,7 +7,7 @@ import { GlobalService } from '../global.service';
   templateUrl: './communication-form.component.html',
   styleUrls: ['./communication-form.component.css'],
 })
-export class CommunicationFormComponent {
+export class CommunicationFormComponent implements OnInit {
   // class vars
   communicationForm: FormGroup;
   isChecked_terms: boolean = false;
@@ -27,6 +27,18 @@ export class CommunicationFormComponent {
       comment: ['', [Validators.maxLength(400)]],
       data: [false, [Validators.pattern('true')]]
     });
+
+    this.communicationForm.valueChanges.subscribe(() => {
+      this.globalService.setCommunicationFormData(this.communicationForm.value);
+    });
+  }
+
+  ngOnInit() {
+    // Set initial form data if available
+    const storedData = this.globalService.getCommunicationFormData();
+    if (storedData) {
+      this.communicationForm.patchValue(storedData);
+    }
   }
 
   // funcion general de comprobacion de formulario

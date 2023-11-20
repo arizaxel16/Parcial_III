@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GlobalService } from '../global.service';
 
@@ -7,7 +7,7 @@ import { GlobalService } from '../global.service';
   templateUrl: './health-form.component.html',
   styleUrls: ['./health-form.component.css']
 })
-export class HealthFormComponent {
+export class HealthFormComponent implements OnInit {
 
   // class vars
   healthForm: FormGroup;
@@ -26,6 +26,18 @@ export class HealthFormComponent {
       surgery: ['', [Validators.maxLength(400)]],
       contact: ['', [Validators.required, Validators.maxLength(150)]]
     });
+
+    this.healthForm.valueChanges.subscribe(() => {
+      this.globalService.setHealthFormData(this.healthForm.value);
+    });
+  }
+
+  ngOnInit() {
+    // Set initial form data if available
+    const storedData = this.globalService.getHealthFormData();
+    if (storedData) {
+      this.healthForm.patchValue(storedData);
+    }
   }
 
   // funcion general de comprobacion de formulario
