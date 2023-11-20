@@ -24,6 +24,7 @@ export class AppComponent {
   currentFormIndex = 0;
   routes: string[] = ["personal", "health", "education", "work", "communication"];
   activeClass: String = "hidden";
+  title: String = "google";
 
   constructor(
     private router: Router, 
