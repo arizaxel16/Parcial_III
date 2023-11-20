@@ -15,6 +15,8 @@ export class PersonalFormComponent implements OnInit {
   readonly emailInput_placeholder: String = 'example@email.com';
 
   personalForm: FormGroup;
+  minDate: string | undefined;
+  maxDate: string | undefined;
 
   // constructor formulario con validaciones individuales
   constructor(
@@ -76,6 +78,29 @@ export class PersonalFormComponent implements OnInit {
     if (storedData) {
       this.personalForm.patchValue(storedData);
     }
+
+    // fecha actual
+    const currentDate: Date = new Date();
+
+    // fecha limite minimo
+    const minDate: Date = new Date(currentDate);
+    minDate.setFullYear(currentDate.getFullYear() - 90);
+
+    // fecha limite maximo
+    const maxDate: Date = new Date(currentDate);
+    maxDate.setFullYear(currentDate.getFullYear() - 16);
+
+    // formato YYYY-MM-DD
+    this.minDate = this.formatDate(minDate);
+    this.maxDate = this.formatDate(maxDate);
+  }
+
+  // formatea => YYYY-MM-DD
+  private formatDate(date: Date): string {
+    const yyyy: number = date.getFullYear();
+    const mm: string = String(date.getMonth() + 1).padStart(2, '0');
+    const dd: string = String(date.getDate()).padStart(2, '0');
+    return `${yyyy}-${mm}-${dd}`;
   }
 
   // funcion general de comprobacion de formulario

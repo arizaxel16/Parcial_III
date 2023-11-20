@@ -81,8 +81,7 @@
         <h4>Fecha de nacimiento</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <input type="date" formControlName="birthdate" id="birthdate_input" (ngModelChange)="onFormChange()"/>
-      <!-- [min]="minDate" [max]="maxDate" -->
+      <input type="date" formControlName="birthdate" id="birthdate_input" (ngModelChange)="onFormChange()" [min]="minDate" [max]="maxDate"/>
     </div>
     <div
       *ngIf="

@@ -82,8 +82,7 @@
         <h4>Fecha de finalización</h4>
         <h4 class="asterisk">*</h4>
       </span>
-      <input type="date" formControlName="enddate" id="enddate_input" (ngModelChange)="onFormChange()"/>
-      <!-- [min]="minDate" [max]="maxDate" -->
+      <input type="date" formControlName="enddate" id="enddate_input" (ngModelChange)="onFormChange()" [min]="minDate" [max]="maxDate"/>
     </div>
     <div
       *ngIf="

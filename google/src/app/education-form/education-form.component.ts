@@ -10,6 +10,8 @@ import { GlobalService } from '../global.service';
 export class EducationFormComponent implements OnInit {
 
   educationForm: FormGroup;
+  minDate: string | undefined;
+  maxDate: string | undefined;
 
   // constructor formulario con validaciones individuales
   constructor(private fb: FormBuilder, private globalService: GlobalService) {
@@ -36,6 +38,29 @@ export class EducationFormComponent implements OnInit {
     if (storedData) {
       this.educationForm.patchValue(storedData);
     }
+
+    // fecha actual
+    const currentDate: Date = new Date();
+
+    // fecha limite min
+    const mindate: Date = new Date(currentDate);
+    mindate.setFullYear(currentDate.getFullYear() - 60);
+
+    // fecha limite max
+    const yesterday: Date = new Date(currentDate);
+    yesterday.setDate(currentDate.getDate() - 1);
+
+    // formato YYYY-MM-DD
+    this.minDate = this.formatDate(mindate);
+    this.maxDate = this.formatDate(yesterday);
+  }
+
+  // formatea => YYYY-MM-DD
+  private formatDate(date: Date): string {
+    const yyyy: number = date.getFullYear();
+    const mm: string = String(date.getMonth() + 1).padStart(2, '0');
+    const dd: string = String(date.getDate()).padStart(2, '0');
+    return `${yyyy}-${mm}-${dd}`;
   }
 
   // funcion general de comprobacion de formulario
