@@ -77,5 +77,9 @@ export class GlobalService {
     this.educationFormData = {};
     this.personalFormData = {};
     this.communicationFormData = {};
+
+    for (let index = 0; index < 5; index++) {
+      this.isValidList[index] = false;
+    }
   }
 }
