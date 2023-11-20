@@ -95,15 +95,15 @@
       <textarea
         class="longTextInput"
         type="text"
-        formControlName="responsabilities"
-        id="responsabilities_input"
+        formControlName="responsibilities"
+        id="responsibilities_input"
         (ngModelChange)="onFormChange()"
       ></textarea>
     </div>
     <div
       *ngIf="
-        workForm.get('responsabilities')!.invalid &&
-        workForm.get('responsabilities')!.touched
+        workForm.get('responsibilities')!.invalid &&
+        workForm.get('responsibilities')!.touched
       "
       class="error-message"
     >

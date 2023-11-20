@@ -19,28 +19,16 @@ export class WorkFormComponent implements OnInit {
 
   // constructor de formulario
   constructor(private fb: FormBuilder, private globalService: GlobalService) {
-    // this.workForm = this.fb.group({
-    //   enterprise: ['', [Validators.maxLength(50), Validators.required]],
-    //   position: ['', [Validators.maxLength(100), Validators.required]],
-    //   startdate: ['', Validators.required],
-    //   enddate: ['', Validators.required],
-    //   responsibilities: ['', [Validators.required, Validators.maxLength(400)]],
-    //   achievements: ['', [Validators.maxLength(200)]],
-    //   country: [{ value: 'Select', disabled: false }, Validators.required],
-    //   supervisor: ['',[Validators.required,Validators.maxLength(50),Validators.pattern(/^[a-zA-Z]+$/)]],
-    //   exit: ['', [Validators.required, Validators.maxLength(300)]],
-    // });
-
     this.workForm = this.fb.group({
-      enterprise: [''],
-      position: [''],
-      startdate: [''],
-      enddate: [''],
-      responsibilities: [''],
-      achievements: [''],
-      country: [''],
-      supervisor: [''],
-      exit: [''],
+      enterprise: ['', [Validators.maxLength(50), Validators.required]],
+      position: ['', [Validators.maxLength(100), Validators.required]],
+      startdate: ['', Validators.required],
+      enddate: ['', Validators.required],
+      responsibilities: ['', [Validators.required, Validators.maxLength(400)]],
+      achievements: ['', [Validators.maxLength(200)]],
+      country: [null, Validators.required],
+      supervisor: ['',[Validators.required,Validators.maxLength(50),Validators.pattern(/^[a-zA-Z]+$/)]],
+      exit: ['', [Validators.required, Validators.maxLength(300)]],
     });
 
     this.workForm.valueChanges.subscribe(() => {
@@ -80,6 +68,7 @@ export class WorkFormComponent implements OnInit {
 
   // funcion general de comprobacion de formulario
   onFormChange(): void {
+    console.log('Form Valid:', this.workForm.valid);
     this.globalService.setIsValidForm(3, this.workForm.valid);
   }
 }
