@@ -22,19 +22,16 @@ export class AppComponent {
 
   currentFormIndex = 0;
   routes: string[] = ["personal", "health", "education", "work", "communication"];
+  activeClass: String = "hidden";
 
   constructor(
     private router: Router, 
     private globalService: GlobalService
-    ) {}
+  ) {}
 
   onPrevious() {
-    if (this.formValidation()) {
-      this.currentFormIndex--;
-      this.router.navigate(['/' + this.routes[this.currentFormIndex]]);
-    } else {
-      alert('Revise el formulario, algun/os campos son inválidos');
-    }
+    this.currentFormIndex--;
+    this.router.navigate(['/' + this.routes[this.currentFormIndex]]);
   }
 
   onNext() {
@@ -59,7 +56,14 @@ export class AppComponent {
     }
 
     if (formGroupValid === true) {
-      alert("VALID");
+      this.activeClass = "ticket-overlay"
     }
+  }
+
+  onClick(){
+    this.activeClass = "hidden";
+    this.globalService.clearData();
+    this.router.navigate(['/']);
+    this.currentFormIndex = 0;
   }
 }

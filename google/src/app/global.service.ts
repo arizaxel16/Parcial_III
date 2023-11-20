@@ -70,4 +70,12 @@ export class GlobalService {
   setWorkFormData(formData: any) {
     this.workFormData = formData;
   }
+
+  clearData() {
+    this.workFormData = {};
+    this.healthFormData = {};
+    this.educationFormData = {};
+    this.personalFormData = {};
+    this.communicationFormData = {};
+  }
 }

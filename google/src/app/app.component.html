@@ -16,4 +16,12 @@
         <button (click)="onNext()" [hidden]="currentFormIndex === 4">Siguiente</button>
         <button id="submit" type="submit" (click)="onSubmit()" [hidden]="currentFormIndex != 4">Enviar !</button>
     </div>
+
+    <div [class]="activeClass">
+        <div class="ticket-content">
+            <h3>Su formulario a sido enviado exitosamente !</h3>
+            <button type="submit" (click)="onClick()">OK</button>
+        </div>
+    </div>
+
 </div>
