@@ -24,7 +24,7 @@ export class WorkFormComponent implements OnInit {
       position: ['', [Validators.maxLength(100), Validators.required]],
       startdate: ['', Validators.required],
       enddate: ['', Validators.required],
-      responsabilities: ['', [Validators.required, Validators.maxLength(400)]],
+      responsibilities: ['', [Validators.required, Validators.maxLength(400)]],
       achievements: ['', [Validators.maxLength(200)]],
       country: [{ value: 'Select', disabled: false }, Validators.required],
       supervisor: ['', [Validators.required, Validators.maxLength(50), Validators.pattern(/^[a-zA-Z]+$/)]],
