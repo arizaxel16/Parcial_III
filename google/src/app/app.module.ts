@@ -9,6 +9,7 @@ import { HealthFormComponent } from './health-form/health-form.component';
 import { WorkFormComponent } from './work-form/work-form.component';
 import { EducationFormComponent } from './education-form/education-form.component';
 import { CommunicationFormComponent } from './communication-form/communication-form.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CommunicationFormComponent } from './communication-form/communication-f
     HealthFormComponent,
     WorkFormComponent,
     EducationFormComponent,
-    CommunicationFormComponent
+    CommunicationFormComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
