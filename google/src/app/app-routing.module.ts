@@ -5,6 +5,7 @@ import { EducationFormComponent } from './education-form/education-form.componen
 import { HealthFormComponent } from './health-form/health-form.component';
 import { PersonalFormComponent } from './personal-form/personal-form.component';
 import { WorkFormComponent } from './work-form/work-form.component';
+import { HistoryComponent } from './history/history.component';
 
 const routes: Routes = [
   { path: 'personal', component: PersonalFormComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'education', component: EducationFormComponent },
   { path: 'work', component: WorkFormComponent },
   { path: 'communication', component: CommunicationFormComponent },
+  { path: 'history', component: HistoryComponent },
   { path: '', redirectTo: '/personal', pathMatch: 'full' }
 ];
 

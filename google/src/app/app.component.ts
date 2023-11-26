@@ -6,13 +6,21 @@ import { HealthFormComponent } from './health-form/health-form.component';
 import { PersonalFormComponent } from './personal-form/personal-form.component';
 import { WorkFormComponent } from './work-form/work-form.component';
 import { GlobalService } from './global.service';
-import { Checkout } from './checkout/checkout.model';
+
+interface User {
+  name: String;
+  surname: String;
+  birthdate: String;
+  blood: String;
+  email: String;
+}
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
+
 export class AppComponent {
 
   @ViewChild(PersonalFormComponent) personalForm: PersonalFormComponent | undefined;
@@ -23,7 +31,6 @@ export class AppComponent {
 
   currentFormIndex = 0;
   routes: string[] = ["personal", "health", "education", "work", "communication"];
-  activeClass: String = "hidden";
   title: String = "google";
 
   constructor(
@@ -58,16 +65,17 @@ export class AppComponent {
     }
 
     if (formGroupValid === true) {
-      this.activeClass = "ticket-overlay"
-      // crea objeto checkout
-      // const checkout: Checkout = {};
+      this.globalService.saveUser();
+      this.currentFormIndex = 0;
+      this.router.navigate(["/history"]);
     }
   }
 
-  onClick(){
-    this.activeClass = "hidden";
-    this.globalService.clearData();
-    this.router.navigate(['/']);
-    this.currentFormIndex = 0;
+  goToHistory() {
+    this.router.navigate(["/history"])
+  }
+
+  addApplicant() {
+    this.globalService.addTestUser();
   }
 }

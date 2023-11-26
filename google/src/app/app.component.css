@@ -91,3 +91,19 @@ h4 {
 .hidden {
   visibility: hidden;
 }
+
+.outlet {
+  width: 100%;
+}
+
+.history-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  width: 300px;
+  z-index: 1;
+}

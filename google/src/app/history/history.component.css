@@ -1,0 +1,148 @@
+.user-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 640px;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    overflow-y: scroll;
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+
+h1 {
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.user-card {
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+    height: 260px;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.type-1 {
+    background: linear-gradient(to bottom, #f8f8f8 13%, #000000 14%, #ea4335 14%);
+}
+.type-2 {
+    background: linear-gradient(to bottom, #f8f8f8 13%, #000000 14%, #4285f4 14%);
+}
+.type-3 {
+    background: linear-gradient(to bottom, #f8f8f8 13%, #000000 14%, #fbbc05 14%);
+}
+.type-4 {
+    background: linear-gradient(to bottom, #f8f8f8 13%, #000000 14%, #34a853 14%);
+}
+
+.history-container {
+    z-index: 1;
+    background-color: rgb(197, 220, 240);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.info {
+    text-align: left;
+    width: 100%;
+}
+
+.user-card p {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0px;
+    font-size: 0.7rem;
+    overflow-x: scroll;
+    width: 100%;
+    height: 14px;
+}
+
+.user-card h1 {
+    font-size: 1.3rem;
+    overflow-x: scroll;
+    margin: 3px 0px;
+}
+
+.img-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f8f8f8;
+    margin-bottom: 5px;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+}
+
+#google {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 3px;
+}
+
+#google h1 {
+    font-size: 1.1rem;
+}
+
+button {
+    width: 130px;
+    background-color: #ededed;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+        5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    transition: all 0.3s;
+    margin: 25px 0px;
+}
+
+button:disabled {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #a1a1a1;
+    cursor: not-allowed;
+}
+
+button:disabled:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #a1a1a1;
+    cursor: not-allowed;
+    scale: 1;
+}
+
+button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    scale: 1.05;
+}

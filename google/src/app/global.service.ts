@@ -1,8 +1,16 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+interface User {
+  name: String;
+  surname: String;
+  birthdate: String;
+  blood: String;
+  email: String;
+}
+
+@Injectable({ providedIn: 'root' })
+
+
 export class GlobalService {
 
   public isValidForm0: boolean = false;
@@ -12,6 +20,36 @@ export class GlobalService {
   public isValidForm4: boolean = false;
 
   public isValidList: boolean[] = [this.isValidForm0, this.isValidForm1, this.isValidForm2, this.isValidForm3, this.isValidForm4];
+  public userArray: User[] = [
+    {
+      name: "Axel",
+      surname: "Ariza",
+      birthdate: "2004-05-31",
+      blood: "A+",
+      email: "arizaxel16@gmail.com"
+    },
+    {
+      name: "John",
+      surname: "Doe",
+      birthdate: "1999-09-22",
+      blood: "O-",
+      email: "test@hotmail.com"
+    },
+    {
+      name: "Jane",
+      surname: "Doe",
+      birthdate: "2002-02-05",
+      blood: "AB+",
+      email: "myemail@mail.com"
+    },
+    {
+      name: "Cami",
+      surname: "Ramirez",
+      birthdate: "2004-03-20",
+      blood: "A+",
+      email: "maricarampaz@gmail.com"
+    }
+  ];
 
   getIsValidForm(index: number): boolean {
     return this.isValidList[index];
@@ -81,5 +119,39 @@ export class GlobalService {
     for (let index = 0; index < 5; index++) {
       this.isValidList[index] = false;
     }
+  }
+
+  generateCode(): number {
+    const min = 1000000000;
+    const max = 9999999999;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  getUser(): User {
+    let currentDataPersonal = this.getPersonalFormData();
+    let currentDataHealth = this.getHealthFormData();
+
+    const user = {
+      name: currentDataPersonal.name,
+      surname: currentDataPersonal.surname,
+      birthdate: currentDataPersonal.birthdate,
+      email: currentDataPersonal.email,
+      blood: currentDataHealth.blood,
+    }
+    return user;
+  }
+
+  saveUser() {
+    this.userArray?.push(this.getUser())
+  }
+
+  addTestUser() {
+    this.userArray?.push({
+      name: "Test",
+      surname: "Name",
+      birthdate: "1999-09-09",
+      blood: "O+",
+      email: "test@email.com"
+    })
   }
 }

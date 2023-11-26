@@ -9,19 +9,15 @@
     </div>
     <h2>Formulario de aplicación nuevos integrantes</h2>
 
-    <router-outlet></router-outlet>
+    <router-outlet class="outlet"></router-outlet>
 
     <div class="nav-buttons">
         <button [disabled]="currentFormIndex === 0" (click)="onPrevious()">Anterior</button>
         <button (click)="onNext()" [hidden]="currentFormIndex === 4">Siguiente</button>
         <button id="submit" type="submit" (click)="onSubmit()" [hidden]="currentFormIndex != 4">Enviar !</button>
     </div>
-
-    <div [class]="activeClass">
-        <app-checkout></app-checkout>
-        <button type="submit" (click)="onClick()">OK</button>
-    </div>
-
-    
-
+</div>
+<div class="history-buttons">
+    <button (click)="addApplicant()" [hidden]="currentFormIndex != 0">Añadir Aplicante</button>
+    <button (click)="goToHistory()" [hidden]="currentFormIndex != 0">Historial</button>
 </div>

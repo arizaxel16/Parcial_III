@@ -1,0 +1,25 @@
+<div class="history-container">
+    <h1>Historial de aplicantes</h1>
+    <div class="user-container">
+        <div *ngFor="let user of globalService.userArray; let i = index" class="user-card" [ngClass]="'type-' + (i % 4 + 1)">
+            <div id="google">
+                <h1 style="color: #4285f4;">G</h1>
+                <h1 style="color: #ea4335;">o</h1>
+                <h1 style="color: #fbbc05;">o</h1>
+                <h1 style="color: #4285f4;">g</h1>
+                <h1 style="color: #34a853;">l</h1>
+                <h1 style="color: #ea4335;">e</h1>
+            </div>
+            <h1 class="name">{{ user.name }} {{ user.surname }}</h1>
+            <div class="img-container">
+                <img src="../../assets/img/PROFILE_ICON.png" alt="Profile">
+            </div>
+            <div class="info">
+                <p>Email:{{ user.email }}</p>
+                <p>Grupo Sanguíneo: {{ user.blood }}</p>
+                <p>Fecha Natal: {{ user.birthdate }}</p>
+            </div>
+        </div>
+    </div>
+    <button type="submit" (click)="onClick()">Ok</button>
+</div>
