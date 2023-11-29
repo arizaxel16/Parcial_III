@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 interface User {
-  name: String;
-  surname: String;
-  birthdate: String;
-  blood: String;
-  email: String;
+  name: string;
+  surname: string;
+  birthdate: string;
+  blood: string;
+  email: string;
 }
 
 @Injectable({ providedIn: 'root' })
-
-
 export class GlobalService {
+  private localStorageKey = 'users';
 
   public isValidForm0: boolean = false;
   public isValidForm1: boolean = false;
@@ -19,37 +19,15 @@ export class GlobalService {
   public isValidForm3: boolean = false;
   public isValidForm4: boolean = false;
 
-  public isValidList: boolean[] = [this.isValidForm0, this.isValidForm1, this.isValidForm2, this.isValidForm3, this.isValidForm4];
-  public userArray: User[] = [
-    {
-      name: "Axel",
-      surname: "Ariza",
-      birthdate: "2004-05-31",
-      blood: "A+",
-      email: "arizaxel16@gmail.com"
-    },
-    {
-      name: "John",
-      surname: "Doe",
-      birthdate: "1999-09-22",
-      blood: "O-",
-      email: "test@hotmail.com"
-    },
-    {
-      name: "Jane",
-      surname: "Doe",
-      birthdate: "2002-02-05",
-      blood: "AB+",
-      email: "myemail@mail.com"
-    },
-    {
-      name: "Cami",
-      surname: "Ramirez",
-      birthdate: "2004-03-20",
-      blood: "A+",
-      email: "maricarampaz@gmail.com"
-    }
+  public isValidList: boolean[] = [
+    this.isValidForm0,
+    this.isValidForm1,
+    this.isValidForm2,
+    this.isValidForm3,
+    this.isValidForm4,
   ];
+
+  constructor() {}
 
   getIsValidForm(index: number): boolean {
     return this.isValidList[index];
@@ -137,21 +115,44 @@ export class GlobalService {
       birthdate: currentDataPersonal.birthdate,
       email: currentDataPersonal.email,
       blood: currentDataHealth.blood,
-    }
+    };
     return user;
   }
 
-  saveUser() {
-    this.userArray?.push(this.getUser())
+  saveUser(): void {
+    const newUser = this.getUser();
+
+    // Get existing users from localStorage or initialize an empty array
+    const existingUsers: User[] = JSON.parse(localStorage.getItem(this.localStorageKey) || '[]');
+
+    // Add the new user
+    existingUsers.push(newUser);
+
+    // Save the updated users back to localStorage
+    localStorage.setItem(this.localStorageKey, JSON.stringify(existingUsers));
   }
 
-  addTestUser() {
-    this.userArray?.push({
-      name: "Test",
-      surname: "Name",
-      birthdate: "1999-09-09",
-      blood: "O+",
-      email: "test@email.com"
-    })
+  addTestUser(): void {
+    const testUser: User = {
+      name: 'Test',
+      surname: 'User',
+      birthdate: '2000-01-01',
+      blood: 'A+',
+      email: 'test@example.com',
+    };
+
+    // Get existing users from localStorage or initialize an empty array
+    const existingUsers: User[] = JSON.parse(localStorage.getItem(this.localStorageKey) || '[]');
+
+    // Add the test user
+    existingUsers.push(testUser);
+
+    // Save the updated users back to localStorage
+    localStorage.setItem(this.localStorageKey, JSON.stringify(existingUsers));
+  }
+
+  getData(): Observable<User[]> {
+    const existingUsers: User[] = JSON.parse(localStorage.getItem(this.localStorageKey) || '[]');
+    return of(existingUsers);
   }
 }

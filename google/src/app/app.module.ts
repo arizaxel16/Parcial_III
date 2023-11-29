@@ -10,6 +10,7 @@ import { WorkFormComponent } from './work-form/work-form.component';
 import { EducationFormComponent } from './education-form/education-form.component';
 import { CommunicationFormComponent } from './communication-form/communication-form.component';
 import { HistoryComponent } from './history/history.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HistoryComponent } from './history/history.component';
   imports: [
     BrowserModule,
     ReactiveFormsModule, // Add ReactiveFormsModule here
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [GlobalService],
   bootstrap: [AppComponent]
