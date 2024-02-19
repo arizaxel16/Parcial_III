@@ -7,14 +7,6 @@ import { PersonalFormComponent } from './personal-form/personal-form.component';
 import { WorkFormComponent } from './work-form/work-form.component';
 import { GlobalService } from './global.service';
 
-interface User {
-  name: String;
-  surname: String;
-  birthdate: String;
-  blood: String;
-  email: String;
-}
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -30,11 +22,12 @@ export class AppComponent {
   @ViewChild(CommunicationFormComponent) communicationForm: CommunicationFormComponent | undefined;
 
   currentFormIndex = 0;
+
   routes: string[] = ["personal", "health", "education", "work", "communication"];
   title: String = "google";
 
   constructor(
-    private router: Router, 
+    private router: Router,
     private globalService: GlobalService
   ) {}
 
@@ -72,10 +65,14 @@ export class AppComponent {
   }
 
   goToHistory() {
-    this.router.navigate(["/history"])
+    this.router.navigate(["/history"]);
   }
 
   addApplicant() {
     this.globalService.addTestUser();
+  }
+
+  onClickClearHistory() {
+    this.globalService.clearHistory();
   }
 }

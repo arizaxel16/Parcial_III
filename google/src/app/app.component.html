@@ -18,6 +18,7 @@
     </div>
 </div>
 <div class="history-buttons">
-    <button (click)="addApplicant()" [hidden]="currentFormIndex != 0">Añadir Aplicante</button>
+    <button (click)="addApplicant()" [hidden]="currentFormIndex != 0">Añadir</button>
+    <button (click)="onClickClearHistory()" [hidden]="currentFormIndex != 0">Borrar</button>
     <button (click)="goToHistory()" [hidden]="currentFormIndex != 0">Historial</button>
 </div>

@@ -137,7 +137,7 @@ export class GlobalService {
       name: 'Test',
       surname: 'User',
       birthdate: '2000-01-01',
-      blood: 'A+',
+      blood: 'O+',
       email: 'test@example.com',
     };
 
@@ -154,5 +154,10 @@ export class GlobalService {
   getData(): Observable<User[]> {
     const existingUsers: User[] = JSON.parse(localStorage.getItem(this.localStorageKey) || '[]');
     return of(existingUsers);
+  }
+
+  clearHistory(): void {
+    // Clear all user data from localStorage
+    localStorage.removeItem(this.localStorageKey);
   }
 }
